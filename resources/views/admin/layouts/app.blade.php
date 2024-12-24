@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -18,16 +19,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('admin.dashboard') }}">Home</a>
-                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ route('admin.dashboard') }}">
+                            <i class="fa-solid fa-house"></i> Home |
+                        </a>
+                    </li> --}}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Hello, {{ Auth::guard('admin')->user()->name }}
+                            aria-expanded="false"> 
+                            <span><i class="fa-solid fa-house"></i> Home |</span>
+                            {{ Auth::guard('admin')->user()->name }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('admin.logout') }}">Logout</a></li>
+                            <li><a class="dropdown-item" href="{{ route('admin.logout') }}">
+                                <i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -41,15 +46,13 @@
             <div class="col-lg-3 mb-3">
                 <div class="card shadow">
                     <div class="card-header">
-                        Admin Menu
+                        <i class="fa-solid fa-landmark"></i> Admin Menu
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <a href="{{route('admin.category.index')}}" class="card-link link-underline-light text-black">Category</a>
+                            <a href="{{route('admin.category.index')}}" class="card-link link-underline-light text-black">
+                                <i class="fa-solid fa-list"></i> Category</a>
                         </li>
-                        {{-- <li class="list-group-item">
-                            <a href="{{route('admin.category.create')}}" class="card-link link-underline-light text-black">Create category</a>
-                        </li> --}}
                     </ul>
                 </div>
             </div>

@@ -4,12 +4,14 @@
     <div class="card shadow">
         <div class="card-header">
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-lg-9">
                     Category
                 </div>
 
-                <div class="col-lg-2">
-                    <a href="{{ route('admin.category.create') }}" class="btn btn-primary btn-sm text-white">Create</a>
+                <div class="col-lg-3 d-grid d-md-flex justify-content-md-end">
+                    <a href="{{ route('admin.category.create') }}" class="btn btn-success btn-sm text-white">
+                        <i class="fa-regular fa-square-plus"></i> Create
+                    </a>
                 </div>
             </div>
         </div>
@@ -55,9 +57,15 @@
                             </td>
                             <td>{{ $category->status }}</td>
                             <td>
-                                <a href="{{ route('admin.category.show', $category->id) }}" class="btn btn-primary btn-sm text-white">View</a>
-                                <a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-success btn-sm text-white">Edit</a>
-                                <a href="{{ route('admin.category.delete', $category->id) }}" class="btn btn-danger btn-sm text-white">Delete</a>
+                                <a href="{{ route('admin.category.show', $category->id) }}" class="btn btn-primary btn-sm text-white">
+                                    <i class="fa-solid fa-list"></i> View
+                                </a>
+                                <a href="{{ route('admin.category.edit', $category->id) }}" class="btn btn-success btn-sm text-white">
+                                    <i class="fa-regular fa-pen-to-square"></i> Edit
+                                </a>
+                                <a href="{{ route('admin.category.delete', $category->id) }}" class="btn btn-danger btn-sm text-white">
+                                    <i class="fa-solid fa-trash-can"></i> Delete
+                                </a>
                             </td>
                         </tr>
                     @endforeach
